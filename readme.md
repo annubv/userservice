@@ -1,4 +1,4 @@
-## User Service app
+# User Service app
 
 - List of all users: /user (Method: GET)
 - User Registration Form Page: /user/register (Method: GET)
