@@ -6,4 +6,34 @@ const userform = (req, res) => {
   return res.render("userform");
 };
 
-module.exports = { home, userform };
+const edituserpage = (req, res) => {
+  users
+    .findOne({
+      where: {
+        id: req.param.id
+      }
+    })
+    .then(r => {
+      return res.render("edituser", { r });
+    })
+    .catch(err => {
+      console.log("Error!", err);
+    });
+};
+
+const deluserpage = (req, res) => {
+  users
+    .findOne({
+      where: {
+        id: req.param.id
+      }
+    })
+    .then(r => {
+      return res.render("deluser", { r });
+    })
+    .catch(err => {
+      console.log("Error!", err);
+    });
+};
+
+module.exports = { home, userform, edituserpage, deluserpage };

@@ -4,7 +4,7 @@ const users = db.users;
 const allusers = (req, res) => {
   users.findAll().then(r => {
     console.log("Allusers: ", r);
-    return res.render("allusers", { r });
+    return res.send(r);
   });
 };
 
@@ -62,4 +62,31 @@ deluser = (req, res) => {
     });
 };
 
-module.exports = { allusers, adduser, deluser };
+const edituser = (req, res) => {
+  const {
+    name,
+    college,
+    branch,
+    gender,
+    dob,
+    phone,
+    email,
+    caddr,
+    paddr
+  } = req.body;
+  users
+    .update(
+      { name, college, branch, gender, dob, phone, email, caddr, paddr },
+      { where: { id: req.params.id } }
+    )
+    .then(result => {
+      console.log(result);
+      return res.send(true);
+    })
+    .catch(err => {
+      console.log(err);
+      return res.send(false);
+    });
+};
+
+module.exports = { allusers, adduser, deluser, edituser };
