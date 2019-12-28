@@ -7,8 +7,6 @@ const ejs = require("ejs");
 const session = require("express-session");
 const mainroutes = require(__dirname + "/backend/routes/mainroutes");
 
-const router = express.Router();
-
 const app = express();
 
 app.use(express.static(__dirname + "/client/css"));
@@ -29,7 +27,7 @@ app.use(
     cookie: { maxAge: 100000000, sameSite: true }
   })
 );
-//app.use("/", mainroutes);
+app.use("/", mainroutes);
 app.engine("html", ejs.renderFile);
 app.set("views", __dirname + "/client/views");
 app.set("view engine", "ejs");

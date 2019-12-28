@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>User Registration Form</title>
+  </head>
+  <body>
+    <form action="/user" method="POST">
+      <input type="text" name="name" id="name" placeholder="Name" />
+      <input
+        type="text"
+        name="college"
+        id="college"
+        placeholder="College Name"
+      />
+      <input type="text" name="branch" id="branch" placeholder="Branch" />
+      <select name="gender" id="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+      <input type="date" name="dob" id="dob" placeholder="Date Of Birth" />
+      <input type="text" name="phone" id="phone" placeholder="Phone Number" />
+      <input type="email" name="email" id="email" placeholder="E-mail ID" />
+      <textarea
+        name="caddr"
+        id="caddr"
+        cols="30"
+        rows="10"
+        placeholder="Current Adddress"
+      ></textarea>
+      <textarea
+        name="paddr"
+        id="paddr"
+        cols="30"
+        rows="10"
+        placeholder="Permanent Address"
+      ></textarea>
+      <!--   <input type="file" name="dp" id="dp" /> -->
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
