@@ -10,4 +10,6 @@ router.route("/user/register").get(viewmgmnt.userform);
 
 router.route("/user").post(usermgmnt.adduser);
 
+router.route("/user/:id").post(usermgmnt.deluser);
+
 module.exports = router;

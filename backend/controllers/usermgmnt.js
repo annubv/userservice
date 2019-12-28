@@ -20,17 +20,6 @@ const adduser = (req, res) => {
     caddr,
     paddr
   } = req.body;
-  console.log({
-    name,
-    college,
-    branch,
-    gender,
-    dob,
-    phone,
-    email,
-    caddr,
-    paddr
-  });
   users
     .create({
       name,
@@ -50,4 +39,27 @@ const adduser = (req, res) => {
     .catch(err => console.log(err));
 };
 
-module.exports = { allusers, adduser };
+deluser = (req, res) => {
+  users
+    .destroy({ where: { id: req.params.id } })
+    .then(u => {
+      if (!u) {
+        return res.status(404).send({
+          message: "User not found with id " + req.params.id
+        });
+      }
+      res.send({ message: "User deleted successfully!" });
+    })
+    .catch(err => {
+      if (err.kind === "ObjectId" || err.name === "NotFound") {
+        return res.status(404).send({
+          message: "User not found with id " + req.params.id
+        });
+      }
+      return res.status(500).send({
+        message: "Could not delete User with id " + req.params.id
+      });
+    });
+};
+
+module.exports = { allusers, adduser, deluser };
