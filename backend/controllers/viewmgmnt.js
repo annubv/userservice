@@ -1,3 +1,6 @@
+const db = require("../databases/userdata");
+const users = db.users;
+
 const home = (req, res) => {
   return res.render("index");
 };
@@ -10,7 +13,7 @@ const edituserpage = (req, res) => {
   users
     .findOne({
       where: {
-        id: req.param.id
+        id: req.params.id
       }
     })
     .then(r => {
@@ -25,7 +28,7 @@ const deluserpage = (req, res) => {
   users
     .findOne({
       where: {
-        id: req.param.id
+        id: req.params.id
       }
     })
     .then(r => {
