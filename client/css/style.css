@@ -1,0 +1,28 @@
+body {
+  padding: 1.3rem;
+  font-family: "Bebas Neue", cursive;
+}
+
+.page-head {
+  font-size: 2rem;
+}
+
+.reg-form {
+  margin: 1rem 0rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.reg-form div {
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.reg-form div input,
+select {
+  margin: 0 0 0 0rem;
+  width: 100%;
+  padding: 0.4rem 0.2rem;
+}

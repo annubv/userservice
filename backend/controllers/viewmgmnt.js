@@ -17,6 +17,9 @@ const edituserpage = (req, res) => {
       }
     })
     .then(r => {
+      if (!r) {
+        return res.send("Not found");
+      }
       return res.render("edituser", { r });
     })
     .catch(err => {
@@ -32,6 +35,9 @@ const deluserpage = (req, res) => {
       }
     })
     .then(r => {
+      if (!r) {
+        return res.send("Not found");
+      }
       return res.render("deluser", { r });
     })
     .catch(err => {

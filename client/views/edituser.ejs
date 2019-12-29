@@ -5,76 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link href="/style.css" rel="stylesheet" />
   </head>
   <body>
-    <form action="/edituser/<%=r.id%>" method="POST">
-      <input
-        type="text"
-        name="name"
-        id="name"
-        placeholder="Name"
-        value="<%=r.name%>"
-      />
-      <input
-        type="text"
-        name="college"
-        id="college"
-        placeholder="College Name"
-        value="<%=r.college%>"
-      />
-      <input
-        type="text"
-        name="branch"
-        id="branch"
-        placeholder="Branch"
-        value="<%=r.branch%>"
-      />
-      <select name="gender" id="gender">
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
-      </select>
-      <input
-        type="date"
-        name="dob"
-        id="dob"
-        placeholder="Date Of Birth"
-        value="<%=r.dob%>"
-      />
-      <input
-        type="text"
-        name="phone"
-        id="phone"
-        placeholder="Phone Number"
-        value="<%=r.phone%>"
-      />
-      <input
-        type="email"
-        name="email"
-        id="email"
-        placeholder="E-mail ID"
-        value="<%=r.email%>"
-      />
-      <textarea
-        name="caddr"
-        id="caddr"
-        cols="30"
-        rows="10"
-        placeholder="Current Adddress"
-      >
+    <div class="page-head">User Registration Form</div>
+    <form action="/edituser/<%=r.id%>" class="reg-form">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" value="<%=r.name%>" />
+      </div>
+      <div>
+        <label for="college">College</label>
+        <input type="text" name="college" id="college" value="<%=r.college%>" />
+      </div>
+      <div>
+        <label for="branch">Branch</label>
+        <input type="text" name="branch" id="branch" value="<%=r.branch%>" />
+      </div>
+      <div>
+        <label for="gender">Gender</label>
+        <select name="gender" id="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div>
+        <label for="date">Date of Birth</label>
+        <input type="date" name="dob" id="dob" value="<%=r.dob%>" />
+      </div>
+      <div>
+        <label for="phone">Phone Number</label>
+        <input type="text" name="phone" id="phone" value="<%=r.phone%>" />
+      </div>
+      <div>
+        <label for="email">E-mail ID</label>
+        <input type="email" name="email" id="email" value="<%=r.email%>" />
+      </div>
+      <div>
+        <label for="caddr">Current Address</label>
+        <textarea name="caddr" id="caddr" cols="30" rows="5">
 <%=r.caddr%></textarea
-      >
-      <textarea
-        name="paddr"
-        id="paddr"
-        cols="30"
-        rows="10"
-        placeholder="Permanent Address"
-      >
+        >
+      </div>
+      <div>
+        <label for="paddr">Permanent Address</label>
+        <textarea name="paddr" id="paddr" cols="30" rows="5">
 <%=r.paddr%></textarea
-      >
+        >
+      </div>
       <!--   <input type="file" name="dp" id="dp" /> -->
-      <input type="submit" value="Submit" />
+      <div><input type="submit" value="Submit" /></div>
     </form>
   </body>
 </html>
