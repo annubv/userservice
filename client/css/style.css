@@ -1,6 +1,39 @@
+:root {
+  --main-bg-color: #eaf1f5;
+  --main-btn-color: #327474;
+  --sec-btn-color: #0d2020;
+  --main-text-color: #0e0e0e;
+  --sec-text-color: #eaf1f5;
+}
+
 body {
+  background-color: var(--main-bg-color);
   padding: 1.3rem;
   font-family: "Bebas Neue", cursive;
+  color: var(--main-text-color);
+}
+
+.page-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.page-header button {
+  background: none;
+  background-color: var(--main-btn-color);
+  border: none;
+  cursor: pointer;
+  border-radius: 2rem;
+  padding: 0.2rem 1rem;
+  color: var(--sec-text-color);
+  transition: 0.18s ease-in-out;
+}
+
+.page-header button:hover {
+  background-color: var(--sec-btn-color);
+  color: var(--sec-text-color);
 }
 
 .page-head {

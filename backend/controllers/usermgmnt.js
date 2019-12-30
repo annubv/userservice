@@ -4,7 +4,8 @@ const users = db.users;
 const allusers = (req, res) => {
   users.findAll().then(r => {
     console.log("Allusers: ", r);
-    return res.send(r);
+    /*  return res.send(r); */
+    return res.render("allusers", { r });
   });
 };
 

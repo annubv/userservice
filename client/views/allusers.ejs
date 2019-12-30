@@ -12,7 +12,7 @@
     <link href="/style.css" rel="stylesheet" />
   </head>
   <body>
-    <h1>All Users</h1>
+    <!-- <h1>All Users</h1>
     <% for(var i=0; i<r.length; i++){%>
      <%=r[i].name%>
      <%=r[i].id%>
@@ -20,6 +20,17 @@
      <%}%> 
     <button onclick="window.location.href = '/user/register' ">
       Register Here!
-    </button>
+    </button> -->
+    <div class="page-header">
+      <div class="page-head">All Users</div>
+      <button onclick="window.location.href = '/user/register' ">
+        Add User
+      </button>
+    </div>
+    <% for(var i=0; i<r.length; i++){%>
+      <%=r[i].name%>
+      <%=r[i].id%>
+      <br>
+      <%}%> 
   </body>
 </html>
