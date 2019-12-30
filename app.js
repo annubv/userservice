@@ -9,6 +9,18 @@ const mainroutes = require(__dirname + "/backend/routes/mainroutes");
 
 const app = express();
 
+/* MongoDB Configuration */
+
+var mongoose = require("mongoose");
+var mongoDB = process.env.MONGO || "mongodb://localhost:27017/userservice";
+mongoose.connect(mongoDB, { useNewUrlParser: true });
+mongoose.set("useFindAndModify", false);
+mongoose.set("useUnifiedTopology", true);
+var db = mongoose.connection;
+db.on("error", console.error.bind(console, "MongoDB connection error:"));
+
+/* Middleware Setup */
+
 app.use(express.static(__dirname + "/client/css"));
 app.use(express.static(__dirname + "/client/assets"));
 

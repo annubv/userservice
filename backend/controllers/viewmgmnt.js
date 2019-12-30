@@ -1,5 +1,4 @@
-const db = require("../databases/userdata");
-const users = db.users;
+const user = require("../databases/models/users");
 
 const home = (req, res) => {
   return res.render("index");
@@ -10,38 +9,48 @@ const userform = (req, res) => {
 };
 
 const edituserpage = (req, res) => {
-  users
-    .findOne({
-      where: {
-        id: req.params.id
-      }
-    })
+  user
+    .findById(req.params.id)
     .then(r => {
       if (!r) {
-        return res.send("Not found");
+        return res.status(404).send({
+          message: "User not found with id " + req.params.id
+        });
       }
       return res.render("edituser", { r });
     })
     .catch(err => {
-      console.log("Error!", err);
+      if (err.kind === "ObjectId") {
+        return res.status(404).send({
+          message: "User not found with id " + req.params.id
+        });
+      }
+      return res.status(500).send({
+        message: "Error Showing user with id " + req.params.id
+      });
     });
 };
 
 const deluserpage = (req, res) => {
-  users
-    .findOne({
-      where: {
-        id: req.params.id
-      }
-    })
+  user
+    .findById(req.params.id)
     .then(r => {
       if (!r) {
-        return res.send("Not found");
+        return res.status(404).send({
+          message: "User not found with id " + req.params.id
+        });
       }
       return res.render("deluser", { r });
     })
     .catch(err => {
-      console.log("Error!", err);
+      if (err.kind === "ObjectId") {
+        return res.status(404).send({
+          message: "User not found with id " + req.params.id
+        });
+      }
+      return res.status(500).send({
+        message: "Error Showing user with id " + req.params.id
+      });
     });
 };
 

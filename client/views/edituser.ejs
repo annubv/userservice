@@ -13,7 +13,7 @@
   </head>
   <body>
     <div class="page-head">User Registration Form</div>
-    <form action="/edituser/<%=r.id%>" class="reg-form">
+    <form action="/edituser/<%=r.id%>" class="reg-form" method="POST">
       <div>
         <label for="name">Name</label>
         <input type="text" name="name" id="name" value="<%=r.name%>" />
