@@ -9,28 +9,35 @@
       href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <link href="/style.css" rel="stylesheet" />
   </head>
   <body>
-    <!-- <h1>All Users</h1>
-    <% for(var i=0; i<r.length; i++){%>
-     <%=r[i].name%>
-     <%=r[i].id%>
-     <br>
-     <%}%> 
-    <button onclick="window.location.href = '/user/register' ">
-      Register Here!
-    </button> -->
-    <div class="page-header">
-      <div class="page-head">All Users</div>
-      <button onclick="window.location.href = '/user/register' ">
-        Add User
-      </button>
+    <div class="main-content">
+      <div class="page-header">
+        <div class="page-head">All Users</div>
+        <button onclick="window.location.href = '/user/register' ">
+          Add User
+        </button>
+      </div>
+      <table class="user-data">
+        <tr>
+          <th>Name</th>
+          <th>College</th>
+          <th>Branch</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+        <% for(var i=0; i<r.length; i++){%>
+        <tr>
+          <td><%=r[i].name%></td>
+          <td><%=r[i].college%></td>
+          <td><%=r[i].branch%></td>
+          <td><%=r[i].name%></td>
+          <td><%=r[i].name%></td>
+        </tr>
+        <%}%>
+      </table>
     </div>
-    <% for(var i=0; i<r.length; i++){%>
-      <%=r[i].name%>
-      <%=r[i].id%>
-      <br>
-      <%}%> 
   </body>
 </html>
