@@ -66,6 +66,11 @@
         </div>
         <div>
           <label for="paddr">Permanent Address</label>
+          <div>
+            <button type="button" onclick="addr()">
+              Same as Current Address
+            </button>
+          </div>
           <textarea name="paddr" id="paddr" rows="5"></textarea>
         </div>
         <!--   <input type="file" name="dp" id="dp" /> -->
@@ -73,4 +78,11 @@
       </form>
     </div>
   </body>
+  <script>
+    const addr = () => {
+      var caddr = document.getElementById("caddr");
+      var paddr = document.getElementById("paddr");
+      paddr.value = caddr.value;
+    };
+  </script>
 </html>

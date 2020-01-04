@@ -25,7 +25,9 @@
         <tr>
           <th>Name</th>
           <th>College</th>
-          <th>Branch</th>
+          <th class="desk-only">Branch</th>
+          <th>E-mail</th>
+          <th class="desk-only">Phone</th>
           <th>Edit</th>
           <th>Delete</th>
         </tr>
@@ -33,7 +35,9 @@
         <tr>
           <td><%=r[i].name%></td>
           <td><%=r[i].college%></td>
-          <td><%=r[i].branch%></td>
+          <td class="desk-only"><%=r[i].branch%></td>
+          <td><%=r[i].email%></td>
+          <td class="desk-only"><%=r[i].phone%></td>
           <td> <a href="/edituser/<%=r[i]._id%>"><i class="fas fa-user-edit"></i></a></td>
           <td><a href="/deluser/<%=r[i]._id%>"><i class="fas fa-user-minus"></i></a></td>
         </tr>

@@ -8,6 +8,10 @@
   --border-color: #94a6ad;
 }
 
+.desk-only {
+  display: none;
+}
+
 input,
 select,
 textarea {
@@ -88,10 +92,37 @@ body {
 }
 
 .reg-form div {
-  margin: 0.5rem 0;
+  margin: 0.6rem 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+
+.reg-form div label {
+  margin-bottom: 0.2rem;
+}
+
+.reg-form div div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.reg-form div div button {
+  font-family: "Raleway", sans-serif;
+  background: none;
+  background-color: var(--main-btn-color);
+  border: none;
+  cursor: pointer;
+  color: var(--sec-text-color);
+  transition: 0.18s ease-in-out;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+}
+
+.reg-form div div button:hover {
+  background-color: var(--sec-btn-color);
+  color: var(--sec-text-color);
 }
 
 .reg-form div input,
@@ -99,11 +130,21 @@ select,
 textarea,
 .submit-btn {
   margin: 0 0 0 0;
-  width: 95%;
-  padding: 0.3rem 0.2rem;
+  /*   width: 95%; */
+  padding: 0.8rem 0.2rem;
   border-radius: 0rem;
-  background: #f3f3f3;
-  border: solid 1px #c4bfbf;
+  background: none;
+  border: solid 2px #d9d9d9;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: 0.3s ease-in-out;
+}
+
+.reg-form div input:focus,
+select:focus,
+textarea:focus {
+  outline: none !important;
+  border: solid 2px var(--main-btn-color);
 }
 
 .reg-form div .submit-btn {
@@ -162,5 +203,9 @@ textarea,
   .main-nav {
     margin: 2rem 15%;
     padding: 0rem;
+  }
+
+  .desk-only {
+    display: block;
   }
 }
