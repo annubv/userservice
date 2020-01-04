@@ -4,62 +4,82 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title><%=r.name%></title>
     <link
       href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
       rel="stylesheet"
     />
     <link href="/style.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="page-head">User Registration Form</div>
-    <form action="/edituser/<%=r.id%>" class="reg-form" method="POST">
+    <div class="main-nav">
       <div>
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" value="<%=r.name%>" />
+        <a href="/user"><i class="fas fa-home"></i> Home</a>
       </div>
-      <div>
-        <label for="college">College</label>
-        <input type="text" name="college" id="college" value="<%=r.college%>" />
-      </div>
-      <div>
-        <label for="branch">Branch</label>
-        <input type="text" name="branch" id="branch" value="<%=r.branch%>" />
-      </div>
-      <div>
-        <label for="gender">Gender</label>
-        <select name="gender" id="gender">
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-      <div>
-        <label for="date">Date of Birth</label>
-        <input type="date" name="dob" id="dob" value="<%=r.dob%>" />
-      </div>
-      <div>
-        <label for="phone">Phone Number</label>
-        <input type="text" name="phone" id="phone" value="<%=r.phone%>" />
-      </div>
-      <div>
-        <label for="email">E-mail ID</label>
-        <input type="email" name="email" id="email" value="<%=r.email%>" />
-      </div>
-      <div>
-        <label for="caddr">Current Address</label>
-        <textarea name="caddr" id="caddr" cols="30" rows="5">
+    </div>
+    <div class="main-content">
+      <div class="page-head">Edit <%=r.name%>'s details</div>
+      <form action="/edituser/<%=r.id%>" class="reg-form" method="POST">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" value="<%=r.name%>" />
+        </div>
+        <div>
+          <label for="college">College</label>
+          <input
+            type="text"
+            name="college"
+            id="college"
+            value="<%=r.college%>"
+          />
+        </div>
+        <div>
+          <label for="branch">Branch</label>
+          <input type="text" name="branch" id="branch" value="<%=r.branch%>" />
+        </div>
+        <div>
+          <label for="gender">Gender</label>
+          <select name="gender" id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="date">Date of Birth</label>
+          <input type="date" name="dob" id="dob" value="<%=r.dob%>" />
+        </div>
+        <div>
+          <label for="phone">Phone Number</label>
+          <input type="text" name="phone" id="phone" value="<%=r.phone%>" />
+        </div>
+        <div>
+          <label for="email">E-mail ID</label>
+          <input type="email" name="email" id="email" value="<%=r.email%>" />
+        </div>
+        <div>
+          <label for="caddr">Current Address</label>
+          <textarea name="caddr" id="caddr" cols="30" rows="5">
 <%=r.caddr%></textarea
-        >
-      </div>
-      <div>
-        <label for="paddr">Permanent Address</label>
-        <textarea name="paddr" id="paddr" cols="30" rows="5">
+          >
+        </div>
+        <div>
+          <label for="paddr">Permanent Address</label>
+          <textarea name="paddr" id="paddr" cols="30" rows="5">
 <%=r.paddr%></textarea
-        >
-      </div>
-      <!--   <input type="file" name="dp" id="dp" /> -->
-      <div><input type="submit" value="Submit" /></div>
-    </form>
+          >
+        </div>
+        <!--   <input type="file" name="dp" id="dp" /> -->
+        <div><input type="submit" value="Submit" class="submit-btn" /></div>
+      </form>
+    </div>
   </body>
 </html>

@@ -2,7 +2,6 @@ const user = require("../databases/models/users");
 
 const allusers = (req, res) => {
   user.find().then(r => {
-    console.log("Allusers: ", r);
     /*  return res.send(r); */
     return res.render("allusers", { r });
   });

@@ -1,7 +1,7 @@
 const user = require("../databases/models/users");
 
 const home = (req, res) => {
-  return res.render("index");
+  return res.redirect("/user");
 };
 
 const userform = (req, res) => {

@@ -4,17 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Delete User</title>
     <link
       href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
       rel="stylesheet"
     />
     <link href="/style.css" rel="stylesheet" />
   </head>
   <body>
-    Are you sure you want to delete <%=r.name%>'s details?
-    <form action="/deluser/<%=r.id%>" method="POST">
-      <input type="submit" value="Yes" />
-    </form>
+    <div class="main-nav">
+      <div>
+        <a href="/user"><i class="fas fa-home"></i> Home</a>
+      </div>
+    </div>
+    <div class="main-content">
+      <div class="page-head">
+        Are you sure you want to delete <%=r.name%>'s details?
+      </div>
+      <form action="/deluser/<%=r.id%>" method="POST" class="reg-form">
+        <div><input type="submit" value="Yes" class="submit-btn" /></div>
+      </form>
+    </div>
   </body>
 </html>
