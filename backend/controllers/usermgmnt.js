@@ -20,6 +20,11 @@ const adduser = (req, res) => {
     paddr
   } = req.body;
 
+  console.log("The uploaded file is: ", req.file);
+  const new_image = {};
+  new_image.url = req.file.url;
+  new_image.id = req.file.public_id;
+
   var user_instance = new user({
     name,
     college,
@@ -29,7 +34,8 @@ const adduser = (req, res) => {
     phone,
     email,
     caddr,
-    paddr
+    paddr,
+    profileimage: new_image
   });
   user_instance.save(err => {
     if (err) {

@@ -195,6 +195,17 @@ textarea:focus {
   color: var(--sec-btn-color);
 }
 
+.user-data .profile-image {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 2rem;
+  transition: 0.18s ease-in-out;
+}
+
+.user-data .profile-image:hover {
+  box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.377);
+}
+
 @media only screen and (min-width: 900px) {
   .main-content {
     margin: 2rem 15%;
@@ -206,6 +217,6 @@ textarea:focus {
   }
 
   .desk-only {
-    display: block;
+    display: table-cell;
   }
 }

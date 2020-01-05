@@ -23,20 +23,22 @@
       </div>
       <table class="user-data">
         <tr>
+          <th>Profile</th>
           <th>Name</th>
           <th>College</th>
           <th class="desk-only">Branch</th>
-          <th>E-mail</th>
+          <th class="desk-only">E-mail</th>
           <th class="desk-only">Phone</th>
           <th>Edit</th>
           <th>Delete</th>
         </tr>
         <% for(var i=0; i<r.length; i++){%>
         <tr>
+          <td> <a href=""><img src="<%=r[i].profileimage.url%>" alt="proimg" class="profile-image"></a></td>
           <td><%=r[i].name%></td>
           <td><%=r[i].college%></td>
           <td class="desk-only"><%=r[i].branch%></td>
-          <td><%=r[i].email%></td>
+          <td class="desk-only"><%=r[i].email%></td>
           <td class="desk-only"><%=r[i].phone%></td>
           <td> <a href="/edituser/<%=r[i]._id%>"><i class="fas fa-user-edit"></i></a></td>
           <td><a href="/deluser/<%=r[i]._id%>"><i class="fas fa-user-minus"></i></a></td>

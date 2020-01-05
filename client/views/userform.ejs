@@ -27,7 +27,12 @@
     </div>
     <div class="main-content">
       <div class="page-head">User Registration Form</div>
-      <form action="/user" method="POST" class="reg-form">
+      <form
+        action="/user"
+        method="POST"
+        class="reg-form"
+        enctype="multipart/form-data"
+      >
         <div>
           <label for="name">Name</label>
           <input type="text" name="name" id="name" />
@@ -73,7 +78,10 @@
           </div>
           <textarea name="paddr" id="paddr" rows="5"></textarea>
         </div>
-        <!--   <input type="file" name="dp" id="dp" /> -->
+        <div>
+          <label for="dp">Profile Image</label>
+          <input id="file-upload" type="file" name="image" required />
+        </div>
         <div><input type="submit" value="Submit" class="submit-btn" /></div>
       </form>
     </div>

@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const bp = require("body-parser");
 const compress = require("compression");
@@ -43,10 +44,11 @@ app.use("/", mainroutes);
 app.engine("html", ejs.renderFile);
 app.set("views", __dirname + "/client/views");
 app.set("view engine", "ejs");
+
 app.set("port", process.env.PORT || 4000);
 
 app.listen(app.get("port"), () => {
-  console.log("App running on port" + app.get("port"));
+  console.log("App Running at " + "http://localhost:" + app.get("port"));
 });
 
 module.exports = app;

@@ -11,11 +11,11 @@ var UserSchema = new Schema({
   dob: { type: Date, required: true },
   phone: { type: String, required: true },
   caddr: { type: String, required: true },
-  paddr: { type: String, required: true }
-  /*   profileimage: {
+  paddr: { type: String, required: true },
+  profileimage: {
     id: { type: String, default: "1" },
-    url: { type: String, default: "profileimages/defimg.jpg" }
-  } */
+    url: { type: String, default: "images/defimg.jpg" }
+  }
 });
 
 module.exports = mongoose.model("user", UserSchema);
