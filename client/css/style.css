@@ -12,6 +12,10 @@
   display: none;
 }
 
+.heavy {
+  font-weight: bold;
+}
+
 input,
 select,
 textarea {
@@ -198,12 +202,48 @@ textarea:focus {
 .user-data .profile-image {
   width: 2rem;
   height: 2rem;
-  border-radius: 2rem;
+  border-radius: 50%;
   transition: 0.18s ease-in-out;
 }
 
 .user-data .profile-image:hover {
   box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.377);
+}
+
+.profile-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 0 1rem 0;
+  margin: 0 0 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.profile-head div {
+  text-align: center;
+  font-family: "Bebas Neue", cursive;
+  font-size: 2rem;
+}
+
+.profile-head .dp {
+  margin: 1rem 0 1.5rem 0;
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+  box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.548);
+}
+
+.user-content {
+  width: 100%;
+  text-align: left;
+  font-size: 1.1rem;
+  border: none;
+  border-spacing: 0;
+}
+
+.user-content td {
+  margin: 0;
+  padding: 0.8rem;
 }
 
 @media only screen and (min-width: 900px) {
@@ -218,5 +258,22 @@ textarea:focus {
 
   .desk-only {
     display: table-cell;
+  }
+
+  .profile-head {
+    flex-direction: row-reverse;
+  }
+
+  .profile-head div {
+    text-align: center;
+    vertical-align: center;
+    font-size: 4rem;
+    margin: 1.5rem 0 0 2rem;
+  }
+
+  .profile-head .dp {
+    margin: 0 2rem 0 0;
+    height: 200px;
+    width: 200px;
   }
 }

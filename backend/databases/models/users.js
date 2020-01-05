@@ -14,7 +14,7 @@ var UserSchema = new Schema({
   paddr: { type: String, required: true },
   profileimage: {
     id: { type: String, default: "1" },
-    url: { type: String, default: "images/defimg.jpg" }
+    url: { type: String, default: "/images/defimg.jpg" }
   }
 });
 

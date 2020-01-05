@@ -54,4 +54,27 @@ const deluserpage = (req, res) => {
     });
 };
 
-module.exports = { home, userform, edituserpage, deluserpage };
+const userpage = (req, res) => {
+  user
+    .findById(req.params.id)
+    .then(r => {
+      if (!r) {
+        return res.status(404).send({
+          message: "User not found with id " + req.params.id
+        });
+      }
+      return res.render("user", { r });
+    })
+    .catch(err => {
+      if (err.kind === "ObjectId") {
+        return res.status(404).send({
+          message: "User not found with id " + req.params.id
+        });
+      }
+      return res.status(500).send({
+        message: "Error Showing user with id " + req.params.id
+      });
+    });
+};
+
+module.exports = { home, userform, edituserpage, deluserpage, userpage };

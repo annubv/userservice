@@ -23,7 +23,7 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 /* Middleware Setup */
 
 app.use(express.static(__dirname + "/client/css"));
-app.use(express.static(__dirname + "/client/assets"));
+app.use(express.static(__dirname + "/client/assets/"));
 
 app.use(cors());
 app.use(compress());

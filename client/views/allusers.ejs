@@ -34,7 +34,7 @@
         </tr>
         <% for(var i=0; i<r.length; i++){%>
         <tr>
-          <td> <a href=""><img src="<%=r[i].profileimage.url%>" alt="proimg" class="profile-image"></a></td>
+          <td> <a href="/user/<%=r[i]._id%>"><img src="<%=r[i].profileimage.url%>" alt="proimg" class="profile-image"></a></td>
           <td><%=r[i].name%></td>
           <td><%=r[i].college%></td>
           <td class="desk-only"><%=r[i].branch%></td>
